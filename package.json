@@ -1,0 +1,21 @@
+{
+  "name": "stayease",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"yarn workspace @stayease/api dev\" \"yarn workspace @stayease/web dev\"",
+    "build": "yarn workspace @stayease/api build && yarn workspace @stayease/web build",
+    "api": "yarn workspace @stayease/api",
+    "web": "yarn workspace @stayease/web",
+    "db:migrate": "yarn workspace @stayease/api prisma:migrate",
+    "db:seed": "yarn workspace @stayease/api prisma:seed",
+    "db:studio": "yarn workspace @stayease/api prisma:studio"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3"
+  }
+}
