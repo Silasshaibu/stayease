@@ -2,14 +2,13 @@ import 'reflect-metadata';
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import { ExpressAdapter } from '@nestjs/platform-express';
-import * as express from 'express';
+import express, { Express } from 'express';
 import { AppModule } from './src/app.module';
-import type { Express } from 'express';
 
-let server: Express | null = null;
+let server: Express | undefined;
 
 async function bootstrap(): Promise<Express> {
-  if (server) return server;
+  if (server) return server!;
 
   const expressApp = express();
 

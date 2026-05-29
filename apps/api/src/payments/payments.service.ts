@@ -74,7 +74,7 @@ export class PaymentsService {
     }
 
     if (event.type === 'checkout.session.completed') {
-      const session = event.data.object as Stripe.CheckoutSession;
+      const session = event.data.object as Stripe.Checkout.Session;
       const bookingId = session.metadata?.bookingId;
       if (bookingId) {
         await this.prisma.payment.updateMany({

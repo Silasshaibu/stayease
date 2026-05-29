@@ -97,6 +97,7 @@ export class SearchService {
         by: ['city', 'country'],
         where: { status: 'APPROVED', city: { contains: q, mode: 'insensitive' } },
         _count: { id: true },
+        orderBy: { _count: { id: 'desc' } },
         take: 5,
       }),
       this.prisma.hotel.findMany({
