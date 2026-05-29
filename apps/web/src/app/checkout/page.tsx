@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { differenceInCalendarDays } from 'date-fns';
 import toast from 'react-hot-toast';
@@ -17,10 +17,12 @@ export default function CheckoutPage() {
   const [notes, setNotes] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  if (!user) { router.push('/login'); return null; }
-  if (!hotel || !room || !checkIn || !checkOut) {
-    router.push('/search'); return null;
-  }
+  useEffect(() => {
+    if (!user) router.push('/login');
+    else if (!hotel || !room || !checkIn || !checkOut) router.push('/search');
+  }, [user, hotel, room, checkIn, checkOut, router]);
+
+  if (!user || !hotel || !room || !checkIn || !checkOut) return null;
 
   const nights = differenceInCalendarDays(new Date(checkOut), new Date(checkIn));
   const subtotal = Number(room.pricePerNight) * nights;
