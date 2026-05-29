@@ -5,11 +5,11 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useAuthStore } from '@/store/auth.store';
 import { Navbar } from '@/components/layout/Navbar';
 import { clsx } from 'clsx';
-import { LayoutDashboardIcon, BuildingOfficeIcon, BedDoubleIcon, CalendarCheckIcon, WalletIcon, StarIcon } from 'lucide-react';
+import { LayoutDashboardIcon, Building2, BedDoubleIcon, CalendarCheckIcon, WalletIcon, StarIcon } from 'lucide-react';
 
 const navItems = [
   { href: '/owner', label: 'Overview', icon: LayoutDashboardIcon, exact: true },
-  { href: '/owner/properties', label: 'Properties', icon: BuildingOfficeIcon },
+  { href: '/owner/properties', label: 'Properties', icon: Building2 },
   { href: '/owner/rooms', label: 'Rooms', icon: BedDoubleIcon },
   { href: '/owner/bookings', label: 'Reservations', icon: CalendarCheckIcon },
   { href: '/owner/payouts', label: 'Payouts', icon: WalletIcon },

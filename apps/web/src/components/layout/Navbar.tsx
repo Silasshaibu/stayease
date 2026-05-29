@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useAuthStore } from '@/store/auth.store';
 import { Button } from '@/components/ui/Button';
-import { BellIcon, UserCircleIcon, BuildingOfficeIcon } from 'lucide-react';
+import { BellIcon, UserCircleIcon, Building2 } from 'lucide-react';
 
 export function Navbar() {
   const { user, clearAuth } = useAuthStore();
@@ -18,7 +18,7 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center gap-2">
-          <BuildingOfficeIcon className="h-7 w-7 text-primary-600" />
+          <Building2 className="h-7 w-7 text-primary-600" />
           <span className="text-xl font-bold text-primary-700">StayEase</span>
         </Link>
 

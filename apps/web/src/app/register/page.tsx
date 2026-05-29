@@ -9,7 +9,7 @@ import { authApi } from '@/services/api';
 import { useAuthStore } from '@/store/auth.store';
 import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
-import { BuildingOfficeIcon } from 'lucide-react';
+import { Building2 } from 'lucide-react';
 
 const schema = z.object({
   firstName: z.string().min(2, 'First name required'),
@@ -53,7 +53,7 @@ export default function RegisterPage() {
     <div className="min-h-screen bg-gradient-to-br from-primary-50 to-slate-100 flex items-center justify-center px-4 py-10">
       <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-xl">
         <div className="flex flex-col items-center mb-6">
-          <BuildingOfficeIcon className="h-10 w-10 text-primary-600 mb-2" />
+          <Building2 className="h-10 w-10 text-primary-600 mb-2" />
           <h1 className="text-2xl font-bold text-slate-800">Create Your Account</h1>
           <p className="text-sm text-slate-500 mt-1">Start booking hotels worldwide.</p>
         </div>

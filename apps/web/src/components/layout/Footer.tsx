@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BuildingOfficeIcon } from 'lucide-react';
+import { Building2 } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-3">
-              <BuildingOfficeIcon className="h-6 w-6 text-primary-600" />
+              <Building2 className="h-6 w-6 text-primary-600" />
               <span className="text-lg font-bold text-primary-700">StayEase</span>
             </div>
             <p className="text-sm text-slate-500">Find your perfect stay worldwide. Best prices guaranteed.</p>

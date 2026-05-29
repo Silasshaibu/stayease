@@ -1,7 +1,7 @@
 'use client';
 import { useQuery } from '@tanstack/react-query';
 import { adminApi } from '@/services/api';
-import { UsersIcon, BuildingOfficeIcon, CalendarCheckIcon, CurrencyDollarIcon, ClockIcon } from 'lucide-react';
+import { UsersIcon, Building2, CalendarCheckIcon, DollarSign, ClockIcon } from 'lucide-react';
 
 export default function AdminDashboardPage() {
   const { data: stats, isLoading } = useQuery({
@@ -11,11 +11,11 @@ export default function AdminDashboardPage() {
 
   const cards = [
     { label: 'Total Users', value: stats?.users, icon: UsersIcon, color: 'bg-blue-50 text-blue-600' },
-    { label: 'Total Hotels', value: stats?.hotels, icon: BuildingOfficeIcon, color: 'bg-green-50 text-green-600' },
+    { label: 'Total Hotels', value: stats?.hotels, icon: Building2, color: 'bg-green-50 text-green-600' },
     { label: 'Pending Approval', value: stats?.pendingHotels, icon: ClockIcon, color: 'bg-yellow-50 text-yellow-600' },
     { label: 'Total Bookings', value: stats?.bookings, icon: CalendarCheckIcon, color: 'bg-purple-50 text-purple-600' },
     { label: 'Active Bookings', value: stats?.activeBookings, icon: CalendarCheckIcon, color: 'bg-teal-50 text-teal-600' },
-    { label: 'Total Revenue', value: stats?.totalRevenue ? `$${Number(stats.totalRevenue).toLocaleString()}` : '$0', icon: CurrencyDollarIcon, color: 'bg-emerald-50 text-emerald-600' },
+    { label: 'Total Revenue', value: stats?.totalRevenue ? `$${Number(stats.totalRevenue).toLocaleString()}` : '$0', icon: DollarSign, color: 'bg-emerald-50 text-emerald-600' },
   ];
 
   if (isLoading) return (

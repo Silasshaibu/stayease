@@ -5,12 +5,12 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useAuthStore } from '@/store/auth.store';
 import { Navbar } from '@/components/layout/Navbar';
 import { clsx } from 'clsx';
-import { LayoutDashboardIcon, UsersIcon, BuildingOfficeIcon, CalendarCheckIcon, CreditCardIcon, ShieldAlertIcon } from 'lucide-react';
+import { LayoutDashboardIcon, UsersIcon, Building2, CalendarCheckIcon, CreditCardIcon, ShieldAlertIcon } from 'lucide-react';
 
 const navItems = [
   { href: '/admin', label: 'Dashboard', icon: LayoutDashboardIcon, exact: true },
   { href: '/admin/users', label: 'Users', icon: UsersIcon },
-  { href: '/admin/hotels', label: 'Hotels', icon: BuildingOfficeIcon },
+  { href: '/admin/hotels', label: 'Hotels', icon: Building2 },
   { href: '/admin/bookings', label: 'Bookings', icon: CalendarCheckIcon },
   { href: '/admin/payments', label: 'Payments', icon: CreditCardIcon },
 ];

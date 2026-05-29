@@ -1,9 +1,9 @@
 'use client';
 import { useQuery } from '@tanstack/react-query';
-import { hotelsApi, bookingsApi } from '@/services/api';
+import { hotelsApi } from '@/services/api';
 import { useAuthStore } from '@/store/auth.store';
 import Link from 'next/link';
-import { BuildingOfficeIcon, CalendarCheckIcon, CurrencyDollarIcon } from 'lucide-react';
+import { Building2, CalendarCheckIcon } from 'lucide-react';
 
 export default function OwnerOverviewPage() {
   const { user } = useAuthStore();
@@ -16,7 +16,7 @@ export default function OwnerOverviewPage() {
   const totalBookings = hotels?.reduce((s: number, h: any) => s + (h._count?.bookings || 0), 0) || 0;
 
   const stats = [
-    { label: 'Properties', value: hotels?.length || 0, icon: BuildingOfficeIcon, href: '/owner/properties', color: 'bg-blue-50 text-blue-600' },
+    { label: 'Properties', value: hotels?.length || 0, icon: Building2, href: '/owner/properties', color: 'bg-blue-50 text-blue-600' },
     { label: 'Total Rooms', value: totalRooms, icon: CalendarCheckIcon, href: '/owner/rooms', color: 'bg-green-50 text-green-600' },
     { label: 'Total Bookings', value: totalBookings, icon: CalendarCheckIcon, href: '/owner/bookings', color: 'bg-purple-50 text-purple-600' },
   ];
